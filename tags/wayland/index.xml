@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Wayland on Shinyzenith</title>
+    <link>https://aakash.is-a.dev/tags/wayland/</link>
+    <description>Recent content in Wayland on Shinyzenith</description>
+    <image>
+      <url>https://avatars.githubusercontent.com/u/60808802?v=4</url>
+      <link>https://avatars.githubusercontent.com/u/60808802?v=4</link>
+    </image>
+    
+    <lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aakash.is-a.dev/tags/wayland/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wayland Compositor written in nim.</title>
+      <link>https://aakash.is-a.dev/blogs/tinywl_nim/</link>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aakash.is-a.dev/blogs/tinywl_nim/</guid>
+      <description>Recently I started an orgnization named Waycrate to write high quality wayland tools. Being drunk in the wayland craze I took it upon myself to rewrite BSPWM for Wayland. Since the waycrate team has already finished rewriting sxhkd for wayland, this makes my work a tad bit simpler.
+I have decided to name the window manager HerbWM which uncomfyhalomacro came up with.
+The futhark library has done nothing but shock me with it&amp;rsquo;s fantastic support for C.</description>
+    </item>
+    
+    <item>
+      <title>Rewriting swhkd in rust!</title>
+      <link>https://aakash.is-a.dev/blogs/swhkd_rust_rewrite/</link>
+      <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aakash.is-a.dev/blogs/swhkd_rust_rewrite/</guid>
+      <description>Hi all! It&amp;rsquo;s high time I put this domain purchase to use and uploaded my first blog.
+I started a project called swhkd a few weeks back which stands for the Simple Wayland HotKey Daemon.
+Swhkd is a drop in replacement for the popular X11 utility sxhkd, which is a hotkey daemon. Don&amp;rsquo;t let the name fool you, swhkd is compatible with X11, WayLand, and TTY.
+Initially I wrote a python prototype which worked well for a concept but was a memory hog, consuming upto 19Mb for just printing the device key events.</description>
+    </item>
+    
+  </channel>
+</rss>
