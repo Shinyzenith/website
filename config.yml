@@ -19,7 +19,7 @@ params:
   description: "Programming isn't about what you know; it's about what you can figure out. - Chris Pine"
   keywords: [Blog, Portfolio, PaperMod]
   author: ["Aakash Sen Sharma"]
-  images: ["https://avatars.githubusercontent.com/u/60808802?v=4"]
+  images: [""]
   DateFormat: "January 2, 2006"
   defaultTheme: dark
   disableThemeToggle: false
@@ -41,7 +41,7 @@ params:
   tocopen: false
 
   assets:
-    # disableHLJS: true # to disable highlight.js
+    # disableHLJS: true
     # disableFingerprinting: true
     favicon: "https://avatars.githubusercontent.com/u/60808802?v=4"
     favicon16x16: "https://avatars.githubusercontent.com/u/60808802?v=4"
@@ -59,7 +59,7 @@ params:
     enabled: true # needs to be explicitly set
     title: আকাশ
     subtitle: "Programming is not a science. Programming is a craft."
-    imageUrl: "https://avatars.githubusercontent.com/u/60808802?v=4"
+    imageUrl: "images/avatar.png"
     imageWidth: 120
     imageHeight: 120
     imageTitle: my image
@@ -129,4 +129,4 @@ menu:
 #         codeFences: true
 #         guessSyntax: true
 #         lineNos: true
-#         style: monokai
+#         style: api
