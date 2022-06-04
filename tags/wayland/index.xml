@@ -16,7 +16,7 @@
       <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://aakash.is-a.dev/blogs/tinywl_nim/</guid>
-      <description>Recently I started an orgnization named Waycrate to write high quality wayland tools. Being drunk in the wayland craze I took it upon myself to rewrite BSPWM for Wayland. Since the waycrate team has already finished rewriting sxhkd for wayland, this makes my work a tad bit simpler.
+      <description>Recently I started an organization named Waycrate to write high quality wayland tools. Being drunk in the wayland craze I took it upon myself to rewrite BSPWM for Wayland. Since the waycrate team has already finished rewriting sxhkd for wayland, this makes my work a tad bit simpler.
 I have decided to name the window manager HerbWM which uncomfyhalomacro came up with.
 The futhark library has done nothing but shock me with it&amp;rsquo;s fantastic support for C.</description>
     </item>
