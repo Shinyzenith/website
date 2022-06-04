@@ -7,7 +7,7 @@ draft: false
 
 ---
 
-Recently I started an orgnization named [Waycrate](https://github.com/waycrate) to write high quality wayland tools. Being drunk in the wayland craze
+Recently I started an organization named [Waycrate](https://github.com/waycrate) to write high quality wayland tools. Being drunk in the wayland craze
 I took it upon myself to rewrite BSPWM for Wayland. Since the waycrate team has already finished rewriting [sxhkd for wayland](https://github.com/waycrate/swhkd),
 this makes my work a tad bit simpler.
 

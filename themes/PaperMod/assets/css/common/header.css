@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
-
 .nav {
 	display: flex;
 	flex-wrap: wrap;
@@ -8,7 +6,6 @@
 	margin-inline-start: auto;
 	margin-inline-end: auto;
 	line-height: var(--header-height);
-	font-family: "JetBrains Mono", monospace;
 }
 
 .nav a {
