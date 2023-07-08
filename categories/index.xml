@@ -8,6 +8,7 @@
       <url>https://aakash.is-a.dev/</url>
       <link>https://aakash.is-a.dev/</link>
     </image>
-    <atom:link href="https://aakash.is-a.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <language>en</language><atom:link href="https://aakash.is-a.dev/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
