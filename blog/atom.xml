@@ -2,8 +2,7 @@
 The wlroots repository lists the following wrapper libraries:
 Chicken Scheme, Common Lisp, Go, Godot, Haskell, OCaml, Python, Qt, Rust, Swift, Zig
 Don&amp;rsquo;t be fooled by this list! All of these wrapper libraries are unmaintained apart from Python and Zig 😔.
-With the above in mind, I have tried multiple languages to write a compositor with and here are my cumulative thoughts:</summary><content type="html">&lt;hr>
-&lt;h1 id="choosing-a-language">Choosing a language:&lt;/h1>
+With the above in mind, I have tried multiple languages to write a compositor with and here are my cumulative thoughts:</summary><content type="html">&lt;h1 id="choosing-a-language">Choosing a language:&lt;/h1>
 &lt;p>Hi! in my current quest of writing a useable wayland compositing window manager I have gone down a deep rabbit hole.&lt;/p>
 &lt;p>The wlroots repository lists the following wrapper libraries:&lt;/p>
 &lt;blockquote>
@@ -98,8 +97,7 @@ my project so it can gain more popularity.&lt;/p>
 &lt;/blockquote>
 &lt;p>That is all for now, have a nice day 😀.&lt;/p></content><category term="Python"/><category term="Wayland"/></entry><entry><title>Wayland Compositor written in nim.</title><link rel="alternate" href="https://aakash.is-a.dev/blog/2022/wayland-compositor-written-in-nim./"/><id>https://aakash.is-a.dev/blog/2022/wayland-compositor-written-in-nim./</id><published>2022-03-22T00:00:00Z</published><updated>2022-03-22T00:00:00Z</updated><summary>Recently I started an organization named Waycrate to write high quality wayland tools. Being drunk in the wayland craze I took it upon myself to rewrite BSPWM for Wayland. Since the waycrate team has already finished rewriting sxhkd for wayland, this makes my work a tad bit simpler.
 I have decided to name the window manager HerbWM which uncomfyhalomacro came up with.
-The futhark library has done nothing but shock me with it&amp;rsquo;s fantastic support for C.</summary><content type="html">&lt;hr>
-&lt;p>Recently I started an organization named &lt;a href="https://github.com/waycrate">Waycrate&lt;/a> to write high quality wayland tools. Being drunk in the wayland craze
+The futhark library has done nothing but shock me with it&amp;rsquo;s fantastic support for C.</summary><content type="html">&lt;p>Recently I started an organization named &lt;a href="https://github.com/waycrate">Waycrate&lt;/a> to write high quality wayland tools. Being drunk in the wayland craze
 I took it upon myself to rewrite BSPWM for Wayland. Since the waycrate team has already finished rewriting &lt;a href="https://github.com/waycrate/swhkd">sxhkd for wayland&lt;/a>,
 this makes my work a tad bit simpler.&lt;/p>
 &lt;p>I have decided to name the window manager HerbWM which &lt;a href="https://github.com/uncomfyhalomacro">uncomfyhalomacro&lt;/a> came up with.&lt;/p>
@@ -110,8 +108,7 @@ redefine the inline function in nim.&lt;/p>
 &lt;a href="https://github.com/waycrate/nim-wl">tinywl in nim&lt;/a> which if successful, will be merged into upstream herbwm.&lt;/p></content><category term="Nim"/><category term="Wayland"/></entry><entry><title>UNIX domain socket IPC in Rust.</title><link rel="alternate" href="https://aakash.is-a.dev/blog/2022/unix-domain-socket-ipc-in-rust./"/><id>https://aakash.is-a.dev/blog/2022/unix-domain-socket-ipc-in-rust./</id><published>2022-02-08T00:00:00Z</published><updated>2022-02-08T00:00:00Z</updated><summary>The IPC patch is complete and has been merged into the main branch.
 The patch was made possible with the interprocess crate and was later rewritten to raw stdlib implementation in this commit. Currently the server binary (swhks) makes a socket at /run/user/(YourUserID)/swhkd.sock which then the daemon binary (swhkd) tries to establish a connection with.
 After merging the initial set of patches Ckyiu found 2 issues right away:
-Calling the function physical_path() on any evdev::Device object returns None on virtual machines and hence the binary panics and crashes while attempting to execute .</summary><content type="html">&lt;hr>
-&lt;p>The &lt;a href="https://github.com/waycrate/swhkd/pull/10">IPC patch&lt;/a> is complete and has been merged into the main branch.&lt;/p>
+Calling the function physical_path() on any evdev::Device object returns None on virtual machines and hence the binary panics and crashes while attempting to execute .</summary><content type="html">&lt;p>The &lt;a href="https://github.com/waycrate/swhkd/pull/10">IPC patch&lt;/a> is complete and has been merged into the main branch.&lt;/p>
 &lt;p>The patch was made possible with the &lt;a href="https://crates.io/crates/interprocess">interprocess crate&lt;/a> and was later rewritten to raw stdlib implementation
 in &lt;a href="https://github.com/waycrate/swhkd/commit/35d4960d87b8e2ac6e8a32fd642b1f7555f3ec2a">this commit&lt;/a>. Currently the server binary (&lt;code>swhks&lt;/code>) makes a
 socket at &lt;code>/run/user/(YourUserID)/swhkd.sock&lt;/code> which then the daemon binary (&lt;code>swhkd&lt;/code>) tries to establish a connection with.&lt;/p>
@@ -131,8 +128,7 @@ be implementing.&lt;/p>
 &lt;p>That is all for now 😀.&lt;/p></content><category term="Rust"/><category term="Waycrate"/></entry><entry><title>Rewriting swhkd in rust!</title><link rel="alternate" href="https://aakash.is-a.dev/blog/2022/rewriting-swhkd-in-rust/"/><id>https://aakash.is-a.dev/blog/2022/rewriting-swhkd-in-rust/</id><published>2022-02-07T00:00:00Z</published><updated>2022-02-07T00:00:00Z</updated><summary>Hi all! It&amp;rsquo;s high time I put this domain purchase to use and uploaded my first blog.
 I started a project called swhkd a few weeks back which stands for the Simple Wayland HotKey Daemon.
 Swhkd is a drop in replacement for the popular X11 utility sxhkd, which is a hotkey daemon. Don&amp;rsquo;t let the name fool you, swhkd is compatible with X11, WayLand, and TTY.
-Initially I wrote a python prototype which worked well for a concept but was a memory hog, consuming upto 19Mb for just printing the device key events.</summary><content type="html">&lt;hr>
-&lt;p>Hi all! It&amp;rsquo;s high time I put this domain purchase to use and uploaded my first blog.&lt;/p>
+Initially I wrote a python prototype which worked well for a concept but was a memory hog, consuming upto 19Mb for just printing the device key events.</summary><content type="html">&lt;p>Hi all! It&amp;rsquo;s high time I put this domain purchase to use and uploaded my first blog.&lt;/p>
 &lt;p>I started a project called swhkd a few weeks back which stands for the &lt;strong>S&lt;/strong>imple &lt;strong>W&lt;/strong>ayland &lt;strong>H&lt;/strong>ot&lt;strong>K&lt;/strong>ey &lt;strong>D&lt;/strong>aemon.&lt;/p>
 &lt;p>Swhkd is a drop in replacement for the popular X11 utility &lt;a href="https://github.com/baskerville/sxhkd">sxhkd&lt;/a>, which is a hotkey daemon.
 Don&amp;rsquo;t let the name fool you, swhkd is compatible with X11, WayLand, and TTY.&lt;/p>
