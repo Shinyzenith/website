@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shinyzenith</title><link>https://aakash.is-a.dev/tags/waycrate/</link><description>Recent content in Waycrate on Shinyzenith</description><generator>Hugo</generator><language>en-us</language><copyright>BSD Zero Clause License</copyright><atom:link href="https://aakash.is-a.dev/tags/waycrate/rss.xml" rel="self" type="application/xml"/><item><title>Rewriting swhkd in rust!</title><link>https://aakash.is-a.dev/blog/1/rewriting-swhkd-in-rust/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://aakash.is-a.dev/blog/1/rewriting-swhkd-in-rust/</guid><description>&lt;hr>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shinyzenith</title><link>https://aakash.is-a.dev/tags/waycrate/</link><description>Recent content in Waycrate on Shinyzenith</description><generator>Hugo</generator><language>en-us</language><copyright>BSD Zero Clause License</copyright><lastBuildDate>Tue, 08 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aakash.is-a.dev/tags/waycrate/rss.xml" rel="self" type="application/xml"/><item><title>UNIX domain socket IPC in Rust.</title><link>https://aakash.is-a.dev/blog/2022/unix-domain-socket-ipc-in-rust./</link><pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate><guid>https://aakash.is-a.dev/blog/2022/unix-domain-socket-ipc-in-rust./</guid><description>&lt;hr>
+&lt;p>The &lt;a href="https://github.com/waycrate/swhkd/pull/10">IPC patch&lt;/a> is complete and has been merged into the main branch.&lt;/p>
+&lt;p>The patch was made possible with the &lt;a href="https://crates.io/crates/interprocess">interprocess crate&lt;/a> and was later rewritten to raw stdlib implementation
+in &lt;a href="https://github.com/waycrate/swhkd/commit/35d4960d87b8e2ac6e8a32fd642b1f7555f3ec2a">this commit&lt;/a>. Currently the server binary (&lt;code>swhks&lt;/code>) makes a
+socket at &lt;code>/run/user/(YourUserID)/swhkd.sock&lt;/code> which then the daemon binary (&lt;code>swhkd&lt;/code>) tries to establish a connection with.&lt;/p>
+&lt;p>After merging the initial set of patches &lt;a href="https://github.com/unsignedarduino">Ckyiu&lt;/a> found 2 issues right away:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Calling the function &lt;code>physical_path()&lt;/code> on any &lt;code>evdev::Device&lt;/code> object returns None on virtual machines and hence the binary panics and crashes while
+attempting to execute &lt;code>.unwrap()&lt;/code> on it. This issue has been taken care of in this &lt;a href="https://github.com/waycrate/swhkd/commit/1e01014a1436a3983f09c57574b0bca4ff5adfcb">commit.&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>The old error message &amp;ldquo;Invoking user is NOT in input group.&amp;rdquo; would lead users to add themselves to the input group, and we definitely don&amp;rsquo;t want that
+as stated in the &lt;a href="https://shinyzenith.xyz/blogs/swhkd_rust_rewrite/">previous blog&lt;/a>. To counter this issue, &lt;a href="https://github.com/waycrate/swhkd/commit/faecfcf61784a1dfe3c43fa8b4ca303c5b3137b5">swhkd now warns the user&lt;/a> if they have input group access and gracefully exits.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>All that remains now is config file handling which has been assigned to &lt;a href="https://angelo.is-a.dev/">Angelo Fallaria&lt;/a>, and key event handling which I will
+be implementing.&lt;/p>
+&lt;p>That is all for now 😀.&lt;/p></description><category>Rust</category><category>Waycrate</category></item><item><title>Rewriting swhkd in rust!</title><link>https://aakash.is-a.dev/blog/2022/rewriting-swhkd-in-rust/</link><pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate><guid>https://aakash.is-a.dev/blog/2022/rewriting-swhkd-in-rust/</guid><description>&lt;hr>
 &lt;p>Hi all! It&amp;rsquo;s high time I put this domain purchase to use and uploaded my first blog.&lt;/p>
 &lt;p>I started a project called swhkd a few weeks back which stands for the &lt;strong>S&lt;/strong>imple &lt;strong>W&lt;/strong>ayland &lt;strong>H&lt;/strong>ot&lt;strong>K&lt;/strong>ey &lt;strong>D&lt;/strong>aemon.&lt;/p>
 &lt;p>Swhkd is a drop in replacement for the popular X11 utility &lt;a href="https://github.com/baskerville/sxhkd">sxhkd&lt;/a>, which is a hotkey daemon.
@@ -28,22 +46,4 @@ This problem is solved by making a polkit policy file for swhkd which allows use
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/policyconfig&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Currently I&amp;rsquo;m &lt;a href="https://github.com/waycrate/swhkd/pull/10">writing&lt;/a> the client to receive the shell commands. On every key trigger the daemon should
 send a shell command back to the client using UNIX socket IPC according to the keybind callback function.&lt;/p>
-&lt;p>More updates will be available soon™.&lt;/p></description><category>Rust</category><category>Waycrate</category><category>Wayland</category></item><item><title>UNIX domain socket IPC in Rust.</title><link>https://aakash.is-a.dev/blog/1/unix-domain-socket-ipc-in-rust./</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://aakash.is-a.dev/blog/1/unix-domain-socket-ipc-in-rust./</guid><description>&lt;hr>
-&lt;p>The &lt;a href="https://github.com/waycrate/swhkd/pull/10">IPC patch&lt;/a> is complete and has been merged into the main branch.&lt;/p>
-&lt;p>The patch was made possible with the &lt;a href="https://crates.io/crates/interprocess">interprocess crate&lt;/a> and was later rewritten to raw stdlib implementation
-in &lt;a href="https://github.com/waycrate/swhkd/commit/35d4960d87b8e2ac6e8a32fd642b1f7555f3ec2a">this commit&lt;/a>. Currently the server binary (&lt;code>swhks&lt;/code>) makes a
-socket at &lt;code>/run/user/(YourUserID)/swhkd.sock&lt;/code> which then the daemon binary (&lt;code>swhkd&lt;/code>) tries to establish a connection with.&lt;/p>
-&lt;p>After merging the initial set of patches &lt;a href="https://github.com/unsignedarduino">Ckyiu&lt;/a> found 2 issues right away:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Calling the function &lt;code>physical_path()&lt;/code> on any &lt;code>evdev::Device&lt;/code> object returns None on virtual machines and hence the binary panics and crashes while
-attempting to execute &lt;code>.unwrap()&lt;/code> on it. This issue has been taken care of in this &lt;a href="https://github.com/waycrate/swhkd/commit/1e01014a1436a3983f09c57574b0bca4ff5adfcb">commit.&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The old error message &amp;ldquo;Invoking user is NOT in input group.&amp;rdquo; would lead users to add themselves to the input group, and we definitely don&amp;rsquo;t want that
-as stated in the &lt;a href="https://shinyzenith.xyz/blogs/swhkd_rust_rewrite/">previous blog&lt;/a>. To counter this issue, &lt;a href="https://github.com/waycrate/swhkd/commit/faecfcf61784a1dfe3c43fa8b4ca303c5b3137b5">swhkd now warns the user&lt;/a> if they have input group access and gracefully exits.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>All that remains now is config file handling which has been assigned to &lt;a href="https://angelo.is-a.dev/">Angelo Fallaria&lt;/a>, and key event handling which I will
-be implementing.&lt;/p>
-&lt;p>That is all for now 😀.&lt;/p></description><category>Rust</category><category>Waycrate</category></item></channel></rss>
+&lt;p>More updates will be available soon™.&lt;/p></description><category>Rust</category><category>Waycrate</category><category>Wayland</category></item></channel></rss>
