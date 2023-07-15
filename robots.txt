@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://aakash.is-a.dev/sitemap.xml

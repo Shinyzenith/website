@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shinyzenith</title><link>https://aakash.is-a.dev/tags/nim/</link><description>Recent content in Nim on Shinyzenith</description><generator>Hugo</generator><language>en-us</language><copyright>BSD Zero Clause License</copyright><atom:link href="https://aakash.is-a.dev/tags/nim/rss.xml" rel="self" type="application/xml"/><item><title>Wayland Compositor written in nim.</title><link>https://aakash.is-a.dev/blog/1/wayland-compositor-written-in-nim./</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://aakash.is-a.dev/blog/1/wayland-compositor-written-in-nim./</guid><description>&lt;hr>
+&lt;p>Recently I started an organization named &lt;a href="https://github.com/waycrate">Waycrate&lt;/a> to write high quality wayland tools. Being drunk in the wayland craze
+I took it upon myself to rewrite BSPWM for Wayland. Since the waycrate team has already finished rewriting &lt;a href="https://github.com/waycrate/swhkd">sxhkd for wayland&lt;/a>,
+this makes my work a tad bit simpler.&lt;/p>
+&lt;p>I have decided to name the window manager HerbWM which &lt;a href="https://github.com/uncomfyhalomacro">uncomfyhalomacro&lt;/a> came up with.&lt;/p>
+&lt;p>The &lt;a href="https://github.com/pmunch/futhark">futhark&lt;/a> library has done nothing but shock me with it&amp;rsquo;s fantastic support for C. I have no regrets with respect
+to using the library other than the fact that it doesn&amp;rsquo;t support inline functions or function like macros, a common work around to this is just to
+redefine the inline function in nim.&lt;/p>
+&lt;p>Currently the source code of &lt;a href="https://github.com/waycrate/herbwm">HerbWM&lt;/a> is written in Zig but I have already started implementing
+&lt;a href="https://github.com/waycrate/nim-wl">tinywl in nim&lt;/a> which if successful, will be merged into upstream herbwm.&lt;/p></description><category>Nim</category><category>Wayland</category></item></channel></rss>

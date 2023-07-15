@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shinyzenith</title><link>https://aakash.is-a.dev/tags/python/</link><description>Recent content in Python on Shinyzenith</description><generator>Hugo</generator><language>en-us</language><copyright>BSD Zero Clause License</copyright><atom:link href="https://aakash.is-a.dev/tags/python/rss.xml" rel="self" type="application/xml"/><item><title>NextWM!</title><link>https://aakash.is-a.dev/blog/1/nextwm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://aakash.is-a.dev/blog/1/nextwm/</guid><description>&lt;hr>
+&lt;h1 id="choosing-a-language">Choosing a language:&lt;/h1>
+&lt;p>Hi! in my current quest of writing a useable wayland compositing window manager I have gone down a deep rabbit hole.&lt;/p>
+&lt;p>The wlroots repository lists the following wrapper libraries:&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;code>Chicken Scheme&lt;/code>, &lt;code>Common Lisp&lt;/code>, &lt;code>Go&lt;/code>, &lt;code>Godot&lt;/code>, &lt;code>Haskell&lt;/code>, &lt;code>OCaml&lt;/code>, &lt;code>Python&lt;/code>, &lt;code>Qt&lt;/code>, &lt;code>Rust&lt;/code>, &lt;code>Swift&lt;/code>, &lt;code>Zig&lt;/code>&lt;/p>
+&lt;/blockquote>
+&lt;p>Don&amp;rsquo;t be fooled by this list! All of these wrapper libraries are unmaintained apart from Python and Zig 😔.&lt;/p>
+&lt;p>With the above in mind, I have tried multiple languages to write a compositor with and here are my cumulative thoughts:&lt;/p>
+&lt;h2 id="c">C:&lt;/h2>
+&lt;p>I simply don&amp;rsquo;t want to write my compositor in C as it&amp;rsquo;s easy to shoot yourself in the foot with it.&lt;/p>
+&lt;h2 id="c-1">C++:&lt;/h2>
+&lt;p>Same reasons as C, and on top of that importing wlroots headers into C++ in itself is a &lt;a href="https://github.com/swaywm/wlroots/issues/682">messy&lt;/a> task
+including prepocessor re-definitions etc.&lt;/p>
+&lt;h2 id="nim">Nim:&lt;/h2>
+&lt;p>It was initially working till it didn&amp;rsquo;t&amp;hellip;&lt;/p>
+&lt;p>I&amp;rsquo;m still not quite sure why the &lt;a href="https://github.com/Shinyzenith/nim-wl/blob/devel/src/libherb.nim#L125=">callbacks&lt;/a> that I had registered didn&amp;rsquo;t work.&lt;/p>
+&lt;p>If you do, feel free to reach out to me via Email or via &lt;a href="https://github.com/Shinyzenith/nim-wl/issues/new">GitHub issue&lt;/a>.&lt;/p>
+&lt;h2 id="zig">Zig:&lt;/h2>
+&lt;p>Zig is a fine language to use for compositors given the amazing work &lt;a href="https://github.com/ifreund/">@Ifreund&lt;/a> has put in which includes but is not limited to:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/ifreund/zig-pixman">Zig-pixman&lt;/a> - Pixman bindings.&lt;/li>
+&lt;li>&lt;a href="https://github.com/ifreund/zig-wayland">Zig-wayland&lt;/a> - Libwayland bindings.&lt;/li>
+&lt;li>&lt;a href="https://github.com/swaywm/zig-wlroots">Zig-wlroots&lt;/a> - Wlroots bindings.&lt;/li>
+&lt;li>&lt;a href="https://github.com/ifreund/zig-xkbcommon">Zig-xkbcommon&lt;/a> - Xkbcommon bindings.&lt;/li>
+&lt;/ul>
+&lt;p>That being said, Zig is still an unstable language which hasn&amp;rsquo;t even had a 1.0 release yet.&lt;/p>
+&lt;p>Hence I don&amp;rsquo;t want to commit to writing my entire stack in Zig just yet.&lt;/p>
+&lt;p>I am however writing a small helper &lt;a href="https://github.com/shinyzenith/zigshot">screenshot utility&lt;/a> in Zig (&lt;a href="https://github.com/waycrate/wayshot">wayshot&lt;/a> clone) for
+teaching myself and others who want to learn more about the wayland ecosystem.&lt;/p>
+&lt;h2 id="rust">Rust:&lt;/h2>
+&lt;blockquote>
+&lt;p>Although &lt;strong>Smithay isn&amp;rsquo;t the same as wlroots&lt;/strong>, it&amp;rsquo;s still a worthy candidate to mention on this list due to the fact that you can write compositors
+which are &lt;strong>just as functional&lt;/strong> with it too.&lt;/p>
+&lt;/blockquote>
+&lt;p>I&amp;rsquo;ve recently started contributing to &lt;a href="https://github.com/smithay/wayland-rs">wayland-rs&lt;/a> and &lt;a href="https://github.com/smithay/client-toolkit">smithay-client-toolkit&lt;/a>
+and you should too! they&amp;rsquo;re in need of more contributors and as you can imagine, maintaining pure rust libwayland bindings is a herculean task.&lt;/p>
+&lt;blockquote>
+&lt;p>The devs have been nothing but patient with me even when I asked stupid questions over and over again in their matrix channel.&lt;/p>
+&lt;/blockquote>
+&lt;p>All of my wayland knowledge comes from writing numerous wayland clients with wayland-rs and talking to &lt;a href="https://github.com/cmeissl">cmeissl&lt;/a>,
+&lt;a href="https://github.com/i509VCB">i509VCB&lt;/a> and &lt;a href="https://github.com/vberger">Victor Berger&lt;/a> from the smithay team.&lt;/p>
+&lt;p>That being said, Smithay just isn&amp;rsquo;t as mature as wlroots yet. A lot more manual labor is needed just for the tinywl equivalent of wlroots in smithay&amp;hellip;you
+can assume how much it would scale up for a proper usable compositor (None written in smithay yet). This paird with the fact that the &lt;strong>wayland-rs API
+is undergoing a massive breaking change&lt;/strong> for release candidate &lt;strong>0.3.0&lt;/strong>, makes it too volatile to commit to in terms of server side just yet.&lt;/p>
+&lt;blockquote>
+&lt;p>However, &lt;strong>client side API won&amp;rsquo;t change too&lt;/strong> much with release candidate 0.3.0 and I&amp;rsquo;d say it&amp;rsquo;s a pleasant experience to write wayland clients in rust.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>On a separate note, check out the &lt;a href="https://github.com/mahkoh/jay">Jay compositor&lt;/a>. I think the dev is on crack? they implemented practically everything
+on their own:&lt;/p>
+&lt;ul>
+&lt;li>Wayland protocol.&lt;/li>
+&lt;li>Wire protocol.&lt;/li>
+&lt;li>Dbus interface.&lt;/li>
+&lt;li>EGL wrapper.&lt;/li>
+&lt;li>GBM wrapper.&lt;/li>
+&lt;li>OpenGL renderer.&lt;/li>
+&lt;/ul>
+&lt;p>The project doesn&amp;rsquo;t even depend on libwayland!!! 🤯🤯🤯&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="python">Python:&lt;/h2>
+&lt;p>Python to me is a first class candidate for writing compositors. It&amp;rsquo;s not easy to shoot yourself in the foot with, simple enough to write and most importantly,
+it has &lt;a href="https://github.com/flacjacket/pywlroots">maintained bindings&lt;/a>.&lt;/p>
+&lt;p>The question might arise &amp;ldquo;What will you do when the bindings are no longer maintained?&amp;rdquo;.&lt;/p>
+&lt;p>I don&amp;rsquo;t think qtile will become irrelevant anytime soon hence the bindings will stay maintained for a long time.&lt;/p>
+&lt;p>&amp;ldquo;What does qtile have to do with wlroots python bindings?&amp;rdquo;, pywlroots and pywayland are both maintained by &lt;a href="https://github.com/flacjacket">Sean Vig&lt;/a>
+from the qtile team!&lt;/p>
+&lt;hr>
+&lt;h1 id="the-verdict">The Verdict:&lt;/h1>
+&lt;p>It should come of no surprise to you that &lt;strong>I picked python&lt;/strong>. I have created the repo and invited a &lt;a href="https://github.com/actualdankcoder">friend of mine&lt;/a>
+to develop NextWM with me.&lt;/p>
+&lt;hr>
+&lt;h1 id="source-code-availability-and-support">Source Code Availability and Support:&lt;/h1>
+&lt;p>I will follow through with one of the following:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Keep the source private until get paid to release it. If I do get paid, I will provide 100% support for the lifetime of the project. This is because
+&lt;strong>I&amp;rsquo;m tired of offering my free labor&lt;/strong>, I write my software to &lt;strong>teach myself and use in my workflow&lt;/strong> and not to provide support for other issues
+which are irrelevant to my usecase.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Keep the code open-source under &lt;a href="https://spdx.org/licenses/0BSD.html">0BSD license&lt;/a> and stop giving a fuck about bug reports/feature requests I
+get which are irrelevant to me unless I get paid to escalate their priority. I made the mistake of caring too much with &lt;a href="https://github.com/waycrate/swhkd">swhkd&lt;/a>
+and instead got back github issues like such: &lt;a href="https://github.com/waycrate/swhkd/issues/125">&amp;ldquo;see man sxhkd to know other modifiers that sxhkd support instead of waiting people to report them one by one&amp;rdquo;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>I&amp;rsquo;m sorry but I wrote swhkd for my usecase as I needed a hotkey daemon and I bind features as and when requested if I don&amp;rsquo;t need them already. I
+don&amp;rsquo;t like that attitude.&lt;/p>
+&lt;p>I kept this out of the GitHub issue tracker to keep it professional but that comment made me realize that I cared too much about what people think of
+my project so it can gain more popularity.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>This is in no way an invitation to harass the author of the issue and is only my thoughts on the matter.&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>That is all for now, have a nice day 😀.&lt;/p></description><category>Python</category><category>Wayland</category></item></channel></rss>
