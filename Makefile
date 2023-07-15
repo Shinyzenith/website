@@ -6,4 +6,4 @@ build:
 dev:
 	@hugo server -D
 
-.PHONY: build dev 
+.PHONY: build dev

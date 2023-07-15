@@ -1,0 +1,33 @@
+baseURL = "https://aakash.is-a.dev/"
+languageCode = "en-us"
+title = "Shinyzenith"
+copyright = "BSD Zero Clause License"
+theme = "shinyzenith"
+pygmentsCodeFences = true
+paginate = 100
+
+[permalinks]
+	blog = "/blog/:year/:slug/"
+
+[author]
+	name = "Aakash Sen Sharma"
+
+[taxonomies]
+	tag = "tags"
+
+[outputs]
+	home = ["HTML"]
+	section = ["HTML", "RSS", "Atom"]
+
+[mediaTypes."application/atom+xml"]
+	suffixes = ["xml"]
+
+[outputFormats.RSS]
+	mediaType = "application/xml"
+	baseName = "rss"
+[outputFormats.Atom]
+	mediaType = "application/atom+xml"
+	baseName = "atom"
+
+[markup.goldmark.renderer]
+	unsafe = true

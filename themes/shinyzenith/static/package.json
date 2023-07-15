@@ -1,0 +1,14 @@
+{
+  "name": "hugo-theme-shimong",
+  "version": "1.0.0",
+  "description": "A minimalistic theme for emersion.fr",
+  "author": "emersion",
+  "license": "MIT",
+  "dependencies": {
+    "firacode": "^6.2.0",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "nanum-gothic-coding": "^4.0.0"
+  }
+}
