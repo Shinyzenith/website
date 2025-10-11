@@ -13,7 +13,7 @@
           overlays = [ ];
         };
 
-      targetSystems = [ "aarch64-linux" "x86_64-linux" ];
+      targetSystems = [ "aarch64-linux" "x86_64-linux" "aarch64-darwin"];
     in {
       devShells = nixpkgs.lib.genAttrs targetSystems (system:
         let pkgs = pkgsFor system;
