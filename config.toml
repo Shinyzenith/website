@@ -1,5 +1,5 @@
 baseURL = "https://aakash.is-a.dev/"
-languageCode = "en-us"
+locale = "en-us"
 title = "Shinyzenith"
 copyright = "BSD Zero Clause License"
 theme = "shinyzenith"
@@ -9,7 +9,7 @@ paginate = 100
 [permalinks]
 	blog = "/blog/:year/:slug/"
 
-[author]
+[params.author]
 	name = "Aakash Sen Sharma"
 
 [taxonomies]
