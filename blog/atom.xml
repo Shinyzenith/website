@@ -1,170 +1,174 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Shinyzenith</title><link href="https://aakash.is-a.dev/blog/"/><link href="https://aakash.is-a.dev/blog/atom.xml" rel="self" type="application/atom+xml"/><updated>2023-07-25T00:00:00Z</updated><author><name>Aakash Sen Sharma</name></author><generator>Hugo</generator><id>https://aakash.is-a.dev/blog/</id><entry><title>Burnout</title><link rel="alternate" href="https://aakash.is-a.dev/blog/2023/burnout/"/><id>https://aakash.is-a.dev/blog/2023/burnout/</id><published>2023-07-25T00:00:00Z</published><updated>2023-07-25T00:00:00Z</updated><summary>One day, while sitting at my desk, I realized how tough life had been lately. I went through a major surgery, in addition to various other treatments, from which I haven’t yet fully recovered physically. My nose bleeds like an open faucet practically every day.
-Too many relationships with close friends degraded in the past 6 months due to my own failure to set my priorities straight.
-I tried to turn to FOSS and force myself to work as an escape from reality, to forget for a second all the horrible things that had been done to me lately.</summary><content type="html">&lt;p>One day, while sitting at my desk, I realized how tough life had been lately. I went through a major surgery, in addition to various other treatments, from which I haven’t yet fully recovered physically. My nose bleeds like an open faucet practically every day.&lt;/p>
-&lt;p>Too many relationships with close friends degraded in the past 6 months due to my own failure to set my priorities straight.&lt;/p>
-&lt;p>I tried to turn to &lt;code>FOSS&lt;/code> and force myself to work as an escape from reality, to forget for a second all the horrible things that had been done to me lately.&lt;/p>
-&lt;p>It seems I cannot run away from my feelings or emotions anymore. It’s time to face the demons that have affected me so deeply; I can no longer run away from them.&lt;/p>
-&lt;p>My appetite has been reduced to a non-existent status. I’ve lost way too much weight along with the motivation to do practically anything, not to mention the insomnia I’m suffering from.&lt;/p>
-&lt;p>Attempting to not focus on the pain and anger inside me and instead redirecting it onto &lt;code>FOSS&lt;/code> has led to me hating the thing I loved the most: hacking on software.&lt;/p>
-&lt;p>My motivation and will to wake up every day keep waning more and more just when I realize that I am suffering while someone was able to hurt me so deeply and just &lt;em>walk&lt;/em> away, &lt;em>&lt;strong>unscathed&lt;/strong>&lt;/em>. It feels unfair.&lt;/p>
-&lt;p>I don’t know the purpose of this blog post. Take it as you may.&lt;/p>
-&lt;p>&lt;a href="https://youtu.be/5yYMicbSf98">At least some things calm me down.&lt;/a>&lt;/p></content></entry><entry><title>NextWM!</title><link rel="alternate" href="https://aakash.is-a.dev/blog/2022/nextwm/"/><id>https://aakash.is-a.dev/blog/2022/nextwm/</id><published>2022-06-04T00:00:00Z</published><updated>2022-06-04T00:00:00Z</updated><summary>Choosing a language: Hi! in my current quest of writing a useable wayland compositing window manager I have gone down a deep rabbit hole.
-The wlroots repository lists the following wrapper libraries:
-Chicken Scheme, Common Lisp, Go, Godot, Haskell, OCaml, Python, Qt, Rust, Swift, Zig
-Don&amp;rsquo;t be fooled by this list! All of these wrapper libraries are unmaintained apart from Python and Zig 😔.
-With the above in mind, I have tried multiple languages to write a compositor with and here are my cumulative thoughts:</summary><content type="html">&lt;h1 id="choosing-a-language">Choosing a language:&lt;/h1>
-&lt;p>Hi! in my current quest of writing a useable wayland compositing window manager I have gone down a deep rabbit hole.&lt;/p>
-&lt;p>The wlroots repository lists the following wrapper libraries:&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;code>Chicken Scheme&lt;/code>, &lt;code>Common Lisp&lt;/code>, &lt;code>Go&lt;/code>, &lt;code>Godot&lt;/code>, &lt;code>Haskell&lt;/code>, &lt;code>OCaml&lt;/code>, &lt;code>Python&lt;/code>, &lt;code>Qt&lt;/code>, &lt;code>Rust&lt;/code>, &lt;code>Swift&lt;/code>, &lt;code>Zig&lt;/code>&lt;/p>
-&lt;/blockquote>
-&lt;p>Don&amp;rsquo;t be fooled by this list! All of these wrapper libraries are unmaintained apart from Python and Zig 😔.&lt;/p>
-&lt;p>With the above in mind, I have tried multiple languages to write a compositor with and here are my cumulative thoughts:&lt;/p>
-&lt;h2 id="c">C:&lt;/h2>
-&lt;p>I simply don&amp;rsquo;t want to write my compositor in C as it&amp;rsquo;s easy to shoot yourself in the foot with it.&lt;/p>
-&lt;h2 id="c-1">C++:&lt;/h2>
-&lt;p>Same reasons as C, and on top of that importing wlroots headers into C++ in itself is a &lt;a href="https://github.com/swaywm/wlroots/issues/682">messy&lt;/a> task
-including prepocessor re-definitions etc.&lt;/p>
-&lt;h2 id="nim">Nim:&lt;/h2>
-&lt;p>It was initially working till it didn&amp;rsquo;t&amp;hellip;&lt;/p>
-&lt;p>I&amp;rsquo;m still not quite sure why the &lt;a href="https://github.com/Shinyzenith/nim-wl/blob/devel/src/libherb.nim#L125=">callbacks&lt;/a> that I had registered didn&amp;rsquo;t work.&lt;/p>
-&lt;p>If you do, feel free to reach out to me via Email or via &lt;a href="https://github.com/Shinyzenith/nim-wl/issues/new">GitHub issue&lt;/a>.&lt;/p>
-&lt;h2 id="zig">Zig:&lt;/h2>
-&lt;p>Zig is a fine language to use for compositors given the amazing work &lt;a href="https://github.com/ifreund/">@Ifreund&lt;/a> has put in which includes but is not limited to:&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/ifreund/zig-pixman">Zig-pixman&lt;/a> - Pixman bindings.&lt;/li>
-&lt;li>&lt;a href="https://github.com/ifreund/zig-wayland">Zig-wayland&lt;/a> - Libwayland bindings.&lt;/li>
-&lt;li>&lt;a href="https://github.com/swaywm/zig-wlroots">Zig-wlroots&lt;/a> - Wlroots bindings.&lt;/li>
-&lt;li>&lt;a href="https://github.com/ifreund/zig-xkbcommon">Zig-xkbcommon&lt;/a> - Xkbcommon bindings.&lt;/li>
-&lt;/ul>
-&lt;p>That being said, Zig is still an unstable language which hasn&amp;rsquo;t even had a 1.0 release yet.&lt;/p>
-&lt;p>Hence I don&amp;rsquo;t want to commit to writing my entire stack in Zig just yet.&lt;/p>
-&lt;p>I am however writing a small helper &lt;a href="https://github.com/shinyzenith/zigshot">screenshot utility&lt;/a> in Zig (&lt;a href="https://github.com/waycrate/wayshot">wayshot&lt;/a> clone) for
-teaching myself and others who want to learn more about the wayland ecosystem.&lt;/p>
-&lt;h2 id="rust">Rust:&lt;/h2>
-&lt;blockquote>
-&lt;p>Although &lt;strong>Smithay isn&amp;rsquo;t the same as wlroots&lt;/strong>, it&amp;rsquo;s still a worthy candidate to mention on this list due to the fact that you can write compositors
-which are &lt;strong>just as functional&lt;/strong> with it too.&lt;/p>
-&lt;/blockquote>
-&lt;p>I&amp;rsquo;ve recently started contributing to &lt;a href="https://github.com/smithay/wayland-rs">wayland-rs&lt;/a> and &lt;a href="https://github.com/smithay/client-toolkit">smithay-client-toolkit&lt;/a>
-and you should too! they&amp;rsquo;re in need of more contributors and as you can imagine, maintaining pure rust libwayland bindings is a herculean task.&lt;/p>
-&lt;blockquote>
-&lt;p>The devs have been nothing but patient with me even when I asked stupid questions over and over again in their matrix channel.&lt;/p>
-&lt;/blockquote>
-&lt;p>All of my wayland knowledge comes from writing numerous wayland clients with wayland-rs and talking to &lt;a href="https://github.com/cmeissl">cmeissl&lt;/a>,
-&lt;a href="https://github.com/i509VCB">i509VCB&lt;/a> and &lt;a href="https://github.com/vberger">Victor Berger&lt;/a> from the smithay team.&lt;/p>
-&lt;p>That being said, Smithay just isn&amp;rsquo;t as mature as wlroots yet. A lot more manual labor is needed just for the tinywl equivalent of wlroots in smithay&amp;hellip;you
-can assume how much it would scale up for a proper usable compositor (None written in smithay yet). This paird with the fact that the &lt;strong>wayland-rs API
-is undergoing a massive breaking change&lt;/strong> for release candidate &lt;strong>0.3.0&lt;/strong>, makes it too volatile to commit to in terms of server side just yet.&lt;/p>
-&lt;blockquote>
-&lt;p>However, &lt;strong>client side API won&amp;rsquo;t change too&lt;/strong> much with release candidate 0.3.0 and I&amp;rsquo;d say it&amp;rsquo;s a pleasant experience to write wayland clients in rust.&lt;/p>
-&lt;/blockquote>
-&lt;blockquote>
-&lt;p>On a separate note, check out the &lt;a href="https://github.com/mahkoh/jay">Jay compositor&lt;/a>. I think the dev is on crack? they implemented practically everything
-on their own:&lt;/p>
-&lt;ul>
-&lt;li>Wayland protocol.&lt;/li>
-&lt;li>Wire protocol.&lt;/li>
-&lt;li>Dbus interface.&lt;/li>
-&lt;li>EGL wrapper.&lt;/li>
-&lt;li>GBM wrapper.&lt;/li>
-&lt;li>OpenGL renderer.&lt;/li>
-&lt;/ul>
-&lt;p>The project doesn&amp;rsquo;t even depend on libwayland!!! 🤯🤯🤯&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="python">Python:&lt;/h2>
-&lt;p>Python to me is a first class candidate for writing compositors. It&amp;rsquo;s not easy to shoot yourself in the foot with, simple enough to write and most importantly,
-it has &lt;a href="https://github.com/flacjacket/pywlroots">maintained bindings&lt;/a>.&lt;/p>
-&lt;p>The question might arise &amp;ldquo;What will you do when the bindings are no longer maintained?&amp;rdquo;.&lt;/p>
-&lt;p>I don&amp;rsquo;t think qtile will become irrelevant anytime soon hence the bindings will stay maintained for a long time.&lt;/p>
-&lt;p>&amp;ldquo;What does qtile have to do with wlroots python bindings?&amp;rdquo;, pywlroots and pywayland are both maintained by &lt;a href="https://github.com/flacjacket">Sean Vig&lt;/a>
-from the qtile team!&lt;/p>
-&lt;hr>
-&lt;h1 id="the-verdict">The Verdict:&lt;/h1>
-&lt;p>It should come of no surprise to you that &lt;strong>I picked python&lt;/strong>. I have created the repo and invited a &lt;a href="https://github.com/actualdankcoder">friend of mine&lt;/a>
-to develop NextWM with me.&lt;/p>
-&lt;hr>
-&lt;h1 id="source-code-availability-and-support">Source Code Availability and Support:&lt;/h1>
-&lt;p>I will follow through with one of the following:&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Keep the source private until get paid to release it. If I do get paid, I will provide 100% support for the lifetime of the project. This is because
-&lt;strong>I&amp;rsquo;m tired of offering my free labor&lt;/strong>, I write my software to &lt;strong>teach myself and use in my workflow&lt;/strong> and not to provide support for other issues
-which are irrelevant to my usecase.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Keep the code open-source under &lt;a href="https://spdx.org/licenses/0BSD.html">0BSD license&lt;/a> and stop giving a fuck about bug reports/feature requests I
-get which are irrelevant to me unless I get paid to escalate their priority. I made the mistake of caring too much with &lt;a href="https://github.com/waycrate/swhkd">swhkd&lt;/a>
-and instead got back github issues like such: &lt;a href="https://github.com/waycrate/swhkd/issues/125">&amp;ldquo;see man sxhkd to know other modifiers that sxhkd support instead of waiting people to report them one by one&amp;rdquo;&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>I&amp;rsquo;m sorry but I wrote swhkd for my usecase as I needed a hotkey daemon and I bind features as and when requested if I don&amp;rsquo;t need them already. I
-don&amp;rsquo;t like that attitude.&lt;/p>
-&lt;p>I kept this out of the GitHub issue tracker to keep it professional but that comment made me realize that I cared too much about what people think of
-my project so it can gain more popularity.&lt;/p>
-&lt;blockquote>
-&lt;p>&lt;strong>This is in no way an invitation to harass the author of the issue and is only my thoughts on the matter.&lt;/strong>&lt;/p>
-&lt;/blockquote>
-&lt;p>That is all for now, have a nice day 😀.&lt;/p></content><category term="Python"/><category term="Wayland"/></entry><entry><title>Wayland Compositor written in nim.</title><link rel="alternate" href="https://aakash.is-a.dev/blog/2022/wayland-compositor-written-in-nim./"/><id>https://aakash.is-a.dev/blog/2022/wayland-compositor-written-in-nim./</id><published>2022-03-22T00:00:00Z</published><updated>2022-03-22T00:00:00Z</updated><summary>Recently I started an organization named Waycrate to write high quality wayland tools. Being drunk in the wayland craze I took it upon myself to rewrite BSPWM for Wayland. Since the waycrate team has already finished rewriting sxhkd for wayland, this makes my work a tad bit simpler.
-I have decided to name the window manager HerbWM which uncomfyhalomacro came up with.
-The futhark library has done nothing but shock me with it&amp;rsquo;s fantastic support for C.</summary><content type="html">&lt;p>Recently I started an organization named &lt;a href="https://github.com/waycrate">Waycrate&lt;/a> to write high quality wayland tools. Being drunk in the wayland craze
-I took it upon myself to rewrite BSPWM for Wayland. Since the waycrate team has already finished rewriting &lt;a href="https://github.com/waycrate/swhkd">sxhkd for wayland&lt;/a>,
-this makes my work a tad bit simpler.&lt;/p>
-&lt;p>I have decided to name the window manager HerbWM which &lt;a href="https://github.com/uncomfyhalomacro">uncomfyhalomacro&lt;/a> came up with.&lt;/p>
-&lt;p>The &lt;a href="https://github.com/pmunch/futhark">futhark&lt;/a> library has done nothing but shock me with it&amp;rsquo;s fantastic support for C. I have no regrets with respect
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><feed xmlns="http://www.w3.org/2005/Atom"><title>Shinyzenith</title><link href="https://aakash.is-a.dev/blog/"/><link href="https://aakash.is-a.dev/blog/atom.xml" rel="self" type="application/atom+xml"/><updated>2022-06-04T00:00:00Z</updated><author><name>Aakash Sen Sharma</name></author><generator>Hugo</generator><id>https://aakash.is-a.dev/blog/</id><entry><title>NextWM!</title><link rel="alternate" href="https://aakash.is-a.dev/blog/2022/nextwm/"/><id>https://aakash.is-a.dev/blog/2022/nextwm/</id><published>2022-06-04T00:00:00Z</published><updated>2022-06-04T00:00:00Z</updated><summary>&lt;h1 id="choosing-a-language"&gt;Choosing a language:&lt;/h1&gt;
+&lt;p&gt;Hi! in my current quest of writing a useable wayland compositing window manager I have gone down a deep rabbit hole.&lt;/p&gt;
+&lt;p&gt;The wlroots repository lists the following wrapper libraries:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Chicken Scheme&lt;/code&gt;, &lt;code&gt;Common Lisp&lt;/code&gt;, &lt;code&gt;Go&lt;/code&gt;, &lt;code&gt;Godot&lt;/code&gt;, &lt;code&gt;Haskell&lt;/code&gt;, &lt;code&gt;OCaml&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;Qt&lt;/code&gt;, &lt;code&gt;Rust&lt;/code&gt;, &lt;code&gt;Swift&lt;/code&gt;, &lt;code&gt;Zig&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Don&amp;rsquo;t be fooled by this list! All of these wrapper libraries are unmaintained apart from Python and Zig 😔.&lt;/p&gt;
+&lt;p&gt;With the above in mind, I have tried multiple languages to write a compositor with and here are my cumulative thoughts:&lt;/p&gt;</summary><content type="html">&lt;h1 id="choosing-a-language"&gt;Choosing a language:&lt;/h1&gt;
+&lt;p&gt;Hi! in my current quest of writing a useable wayland compositing window manager I have gone down a deep rabbit hole.&lt;/p&gt;
+&lt;p&gt;The wlroots repository lists the following wrapper libraries:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Chicken Scheme&lt;/code&gt;, &lt;code&gt;Common Lisp&lt;/code&gt;, &lt;code&gt;Go&lt;/code&gt;, &lt;code&gt;Godot&lt;/code&gt;, &lt;code&gt;Haskell&lt;/code&gt;, &lt;code&gt;OCaml&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;Qt&lt;/code&gt;, &lt;code&gt;Rust&lt;/code&gt;, &lt;code&gt;Swift&lt;/code&gt;, &lt;code&gt;Zig&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Don&amp;rsquo;t be fooled by this list! All of these wrapper libraries are unmaintained apart from Python and Zig 😔.&lt;/p&gt;
+&lt;p&gt;With the above in mind, I have tried multiple languages to write a compositor with and here are my cumulative thoughts:&lt;/p&gt;
+&lt;h2 id="c"&gt;C:&lt;/h2&gt;
+&lt;p&gt;I simply don&amp;rsquo;t want to write my compositor in C as it&amp;rsquo;s easy to shoot yourself in the foot with it.&lt;/p&gt;
+&lt;h2 id="c-1"&gt;C++:&lt;/h2&gt;
+&lt;p&gt;Same reasons as C, and on top of that importing wlroots headers into C++ in itself is a &lt;a href="https://github.com/swaywm/wlroots/issues/682"&gt;messy&lt;/a&gt; task
+including prepocessor re-definitions etc.&lt;/p&gt;
+&lt;h2 id="nim"&gt;Nim:&lt;/h2&gt;
+&lt;p&gt;It was initially working till it didn&amp;rsquo;t&amp;hellip;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m still not quite sure why the &lt;a href="https://github.com/Shinyzenith/nim-wl/blob/devel/src/libherb.nim#L125="&gt;callbacks&lt;/a&gt; that I had registered didn&amp;rsquo;t work.&lt;/p&gt;
+&lt;p&gt;If you do, feel free to reach out to me via Email or via &lt;a href="https://github.com/Shinyzenith/nim-wl/issues/new"&gt;GitHub issue&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="zig"&gt;Zig:&lt;/h2&gt;
+&lt;p&gt;Zig is a fine language to use for compositors given the amazing work &lt;a href="https://github.com/ifreund/"&gt;@Ifreund&lt;/a&gt; has put in which includes but is not limited to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/ifreund/zig-pixman"&gt;Zig-pixman&lt;/a&gt; - Pixman bindings.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/ifreund/zig-wayland"&gt;Zig-wayland&lt;/a&gt; - Libwayland bindings.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/swaywm/zig-wlroots"&gt;Zig-wlroots&lt;/a&gt; - Wlroots bindings.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/ifreund/zig-xkbcommon"&gt;Zig-xkbcommon&lt;/a&gt; - Xkbcommon bindings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That being said, Zig is still an unstable language which hasn&amp;rsquo;t even had a 1.0 release yet.&lt;/p&gt;
+&lt;p&gt;Hence I don&amp;rsquo;t want to commit to writing my entire stack in Zig just yet.&lt;/p&gt;
+&lt;p&gt;I am however writing a small helper &lt;a href="https://github.com/shinyzenith/zigshot"&gt;screenshot utility&lt;/a&gt; in Zig (&lt;a href="https://github.com/waycrate/wayshot"&gt;wayshot&lt;/a&gt; clone) for
+teaching myself and others who want to learn more about the wayland ecosystem.&lt;/p&gt;
+&lt;h2 id="rust"&gt;Rust:&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Although &lt;strong&gt;Smithay isn&amp;rsquo;t the same as wlroots&lt;/strong&gt;, it&amp;rsquo;s still a worthy candidate to mention on this list due to the fact that you can write compositors
+which are &lt;strong&gt;just as functional&lt;/strong&gt; with it too.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I&amp;rsquo;ve recently started contributing to &lt;a href="https://github.com/smithay/wayland-rs"&gt;wayland-rs&lt;/a&gt; and &lt;a href="https://github.com/smithay/client-toolkit"&gt;smithay-client-toolkit&lt;/a&gt;
+and you should too! they&amp;rsquo;re in need of more contributors and as you can imagine, maintaining pure rust libwayland bindings is a herculean task.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The devs have been nothing but patient with me even when I asked stupid questions over and over again in their matrix channel.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;All of my wayland knowledge comes from writing numerous wayland clients with wayland-rs and talking to &lt;a href="https://github.com/cmeissl"&gt;cmeissl&lt;/a&gt;,
+&lt;a href="https://github.com/i509VCB"&gt;i509VCB&lt;/a&gt; and &lt;a href="https://github.com/vberger"&gt;Victor Berger&lt;/a&gt; from the smithay team.&lt;/p&gt;
+&lt;p&gt;That being said, Smithay just isn&amp;rsquo;t as mature as wlroots yet. A lot more manual labor is needed just for the tinywl equivalent of wlroots in smithay&amp;hellip;you
+can assume how much it would scale up for a proper usable compositor (None written in smithay yet). This paird with the fact that the &lt;strong&gt;wayland-rs API
+is undergoing a massive breaking change&lt;/strong&gt; for release candidate &lt;strong&gt;0.3.0&lt;/strong&gt;, makes it too volatile to commit to in terms of server side just yet.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;However, &lt;strong&gt;client side API won&amp;rsquo;t change too&lt;/strong&gt; much with release candidate 0.3.0 and I&amp;rsquo;d say it&amp;rsquo;s a pleasant experience to write wayland clients in rust.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;On a separate note, check out the &lt;a href="https://github.com/mahkoh/jay"&gt;Jay compositor&lt;/a&gt;. I think the dev is on crack? they implemented practically everything
+on their own:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wayland protocol.&lt;/li&gt;
+&lt;li&gt;Wire protocol.&lt;/li&gt;
+&lt;li&gt;Dbus interface.&lt;/li&gt;
+&lt;li&gt;EGL wrapper.&lt;/li&gt;
+&lt;li&gt;GBM wrapper.&lt;/li&gt;
+&lt;li&gt;OpenGL renderer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The project doesn&amp;rsquo;t even depend on libwayland!!! 🤯🤯🤯&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="python"&gt;Python:&lt;/h2&gt;
+&lt;p&gt;Python to me is a first class candidate for writing compositors. It&amp;rsquo;s not easy to shoot yourself in the foot with, simple enough to write and most importantly,
+it has &lt;a href="https://github.com/flacjacket/pywlroots"&gt;maintained bindings&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The question might arise &amp;ldquo;What will you do when the bindings are no longer maintained?&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;I don&amp;rsquo;t think qtile will become irrelevant anytime soon hence the bindings will stay maintained for a long time.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;What does qtile have to do with wlroots python bindings?&amp;rdquo;, pywlroots and pywayland are both maintained by &lt;a href="https://github.com/flacjacket"&gt;Sean Vig&lt;/a&gt;
+from the qtile team!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="the-verdict"&gt;The Verdict:&lt;/h1&gt;
+&lt;p&gt;It should come of no surprise to you that &lt;strong&gt;I picked python&lt;/strong&gt;. I have created the repo and invited a &lt;a href="https://github.com/actualdankcoder"&gt;friend of mine&lt;/a&gt;
+to develop NextWM with me.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id="source-code-availability-and-support"&gt;Source Code Availability and Support:&lt;/h1&gt;
+&lt;p&gt;I will follow through with one of the following:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Keep the source private until get paid to release it. If I do get paid, I will provide 100% support for the lifetime of the project. This is because
+&lt;strong&gt;I&amp;rsquo;m tired of offering my free labor&lt;/strong&gt;, I write my software to &lt;strong&gt;teach myself and use in my workflow&lt;/strong&gt; and not to provide support for other issues
+which are irrelevant to my usecase.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Keep the code open-source under &lt;a href="https://spdx.org/licenses/0BSD.html"&gt;0BSD license&lt;/a&gt; and stop giving a fuck about bug reports/feature requests I
+get which are irrelevant to me unless I get paid to escalate their priority. I made the mistake of caring too much with &lt;a href="https://github.com/waycrate/swhkd"&gt;swhkd&lt;/a&gt;
+and instead got back github issues like such: &lt;a href="https://github.com/waycrate/swhkd/issues/125"&gt;&amp;ldquo;see man sxhkd to know other modifiers that sxhkd support instead of waiting people to report them one by one&amp;rdquo;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I&amp;rsquo;m sorry but I wrote swhkd for my usecase as I needed a hotkey daemon and I bind features as and when requested if I don&amp;rsquo;t need them already. I
+don&amp;rsquo;t like that attitude.&lt;/p&gt;
+&lt;p&gt;I kept this out of the GitHub issue tracker to keep it professional but that comment made me realize that I cared too much about what people think of
+my project so it can gain more popularity.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;This is in no way an invitation to harass the author of the issue and is only my thoughts on the matter.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That is all for now, have a nice day 😀.&lt;/p&gt;</content><category term="Python"/><category term="Wayland"/></entry><entry><title>Wayland Compositor written in nim.</title><link rel="alternate" href="https://aakash.is-a.dev/blog/2022/wayland-compositor-written-in-nim./"/><id>https://aakash.is-a.dev/blog/2022/wayland-compositor-written-in-nim./</id><published>2022-03-22T00:00:00Z</published><updated>2022-03-22T00:00:00Z</updated><summary>&lt;p&gt;Recently I started an organization named &lt;a href="https://github.com/waycrate"&gt;Waycrate&lt;/a&gt; to write high quality wayland tools. Being drunk in the wayland craze
+I took it upon myself to rewrite BSPWM for Wayland. Since the waycrate team has already finished rewriting &lt;a href="https://github.com/waycrate/swhkd"&gt;sxhkd for wayland&lt;/a&gt;,
+this makes my work a tad bit simpler.&lt;/p&gt;
+&lt;p&gt;I have decided to name the window manager HerbWM which &lt;a href="https://github.com/uncomfyhalomacro"&gt;uncomfyhalomacro&lt;/a&gt; came up with.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://github.com/pmunch/futhark"&gt;futhark&lt;/a&gt; library has done nothing but shock me with it&amp;rsquo;s fantastic support for C. I have no regrets with respect
 to using the library other than the fact that it doesn&amp;rsquo;t support inline functions or function like macros, a common work around to this is just to
-redefine the inline function in nim.&lt;/p>
-&lt;p>Currently the source code of &lt;a href="https://github.com/waycrate/herbwm">HerbWM&lt;/a> is written in Zig but I have already started implementing
-&lt;a href="https://github.com/waycrate/nim-wl">tinywl in nim&lt;/a> which if successful, will be merged into upstream herbwm.&lt;/p></content><category term="Nim"/><category term="Wayland"/></entry><entry><title>UNIX domain socket IPC in Rust.</title><link rel="alternate" href="https://aakash.is-a.dev/blog/2022/unix-domain-socket-ipc-in-rust./"/><id>https://aakash.is-a.dev/blog/2022/unix-domain-socket-ipc-in-rust./</id><published>2022-02-08T00:00:00Z</published><updated>2022-02-08T00:00:00Z</updated><summary>The IPC patch is complete and has been merged into the main branch.
-The patch was made possible with the interprocess crate and was later rewritten to raw stdlib implementation in this commit. Currently the server binary (swhks) makes a socket at /run/user/(YourUserID)/swhkd.sock which then the daemon binary (swhkd) tries to establish a connection with.
-After merging the initial set of patches Ckyiu found 2 issues right away:
-Calling the function physical_path() on any evdev::Device object returns None on virtual machines and hence the binary panics and crashes while attempting to execute .</summary><content type="html">&lt;p>The &lt;a href="https://github.com/waycrate/swhkd/pull/10">IPC patch&lt;/a> is complete and has been merged into the main branch.&lt;/p>
-&lt;p>The patch was made possible with the &lt;a href="https://crates.io/crates/interprocess">interprocess crate&lt;/a> and was later rewritten to raw stdlib implementation
-in &lt;a href="https://github.com/waycrate/swhkd/commit/35d4960d87b8e2ac6e8a32fd642b1f7555f3ec2a">this commit&lt;/a>. Currently the server binary (&lt;code>swhks&lt;/code>) makes a
-socket at &lt;code>/run/user/(YourUserID)/swhkd.sock&lt;/code> which then the daemon binary (&lt;code>swhkd&lt;/code>) tries to establish a connection with.&lt;/p>
-&lt;p>After merging the initial set of patches &lt;a href="https://github.com/unsignedarduino">Ckyiu&lt;/a> found 2 issues right away:&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Calling the function &lt;code>physical_path()&lt;/code> on any &lt;code>evdev::Device&lt;/code> object returns None on virtual machines and hence the binary panics and crashes while
-attempting to execute &lt;code>.unwrap()&lt;/code> on it. This issue has been taken care of in this &lt;a href="https://github.com/waycrate/swhkd/commit/1e01014a1436a3983f09c57574b0bca4ff5adfcb">commit.&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>The old error message &amp;ldquo;Invoking user is NOT in input group.&amp;rdquo; would lead users to add themselves to the input group, and we definitely don&amp;rsquo;t want that
-as stated in the &lt;a href="https://shinyzenith.xyz/blogs/swhkd_rust_rewrite/">previous blog&lt;/a>. To counter this issue, &lt;a href="https://github.com/waycrate/swhkd/commit/faecfcf61784a1dfe3c43fa8b4ca303c5b3137b5">swhkd now warns the user&lt;/a> if they have input group access and gracefully exits.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>All that remains now is config file handling which has been assigned to &lt;a href="https://angelo.is-a.dev/">Angelo Fallaria&lt;/a>, and key event handling which I will
-be implementing.&lt;/p>
-&lt;p>That is all for now 😀.&lt;/p></content><category term="Rust"/><category term="Waycrate"/></entry><entry><title>Rewriting swhkd in rust!</title><link rel="alternate" href="https://aakash.is-a.dev/blog/2022/rewriting-swhkd-in-rust/"/><id>https://aakash.is-a.dev/blog/2022/rewriting-swhkd-in-rust/</id><published>2022-02-07T00:00:00Z</published><updated>2022-02-07T00:00:00Z</updated><summary>Hi all! It&amp;rsquo;s high time I put this domain purchase to use and uploaded my first blog.
-I started a project called swhkd a few weeks back which stands for the Simple Wayland HotKey Daemon.
-Swhkd is a drop in replacement for the popular X11 utility sxhkd, which is a hotkey daemon. Don&amp;rsquo;t let the name fool you, swhkd is compatible with X11, WayLand, and TTY.
-Initially I wrote a python prototype which worked well for a concept but was a memory hog, consuming upto 19Mb for just printing the device key events.</summary><content type="html">&lt;p>Hi all! It&amp;rsquo;s high time I put this domain purchase to use and uploaded my first blog.&lt;/p>
-&lt;p>I started a project called swhkd a few weeks back which stands for the &lt;strong>S&lt;/strong>imple &lt;strong>W&lt;/strong>ayland &lt;strong>H&lt;/strong>ot&lt;strong>K&lt;/strong>ey &lt;strong>D&lt;/strong>aemon.&lt;/p>
-&lt;p>Swhkd is a drop in replacement for the popular X11 utility &lt;a href="https://github.com/baskerville/sxhkd">sxhkd&lt;/a>, which is a hotkey daemon.
-Don&amp;rsquo;t let the name fool you, swhkd is compatible with X11, WayLand, and TTY.&lt;/p>
-&lt;p>Initially I wrote a python prototype which worked well for a concept but was a memory hog, consuming upto 19Mb for just printing the device key events.
-I was initially considering zig or go for the rewrite but then I decided to give the RIIR ( rewrite it in rust ) meme a try.&lt;/p>
-&lt;p>Rust definitely lived up to it&amp;rsquo;s name. &lt;a href="https://github.com/waycrate/swhkd/pull/7">After the rewrite&lt;/a> the code isn&amp;rsquo;t too hard to read and it&amp;rsquo;s really
+redefine the inline function in nim.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently I started an organization named &lt;a href="https://github.com/waycrate"&gt;Waycrate&lt;/a&gt; to write high quality wayland tools. Being drunk in the wayland craze
+I took it upon myself to rewrite BSPWM for Wayland. Since the waycrate team has already finished rewriting &lt;a href="https://github.com/waycrate/swhkd"&gt;sxhkd for wayland&lt;/a&gt;,
+this makes my work a tad bit simpler.&lt;/p&gt;
+&lt;p&gt;I have decided to name the window manager HerbWM which &lt;a href="https://github.com/uncomfyhalomacro"&gt;uncomfyhalomacro&lt;/a&gt; came up with.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://github.com/pmunch/futhark"&gt;futhark&lt;/a&gt; library has done nothing but shock me with it&amp;rsquo;s fantastic support for C. I have no regrets with respect
+to using the library other than the fact that it doesn&amp;rsquo;t support inline functions or function like macros, a common work around to this is just to
+redefine the inline function in nim.&lt;/p&gt;
+&lt;p&gt;Currently the source code of &lt;a href="https://github.com/waycrate/herbwm"&gt;HerbWM&lt;/a&gt; is written in Zig but I have already started implementing
+&lt;a href="https://github.com/waycrate/nim-wl"&gt;tinywl in nim&lt;/a&gt; which if successful, will be merged into upstream herbwm.&lt;/p&gt;</content><category term="Nim"/><category term="Wayland"/></entry><entry><title>UNIX domain socket IPC in Rust.</title><link rel="alternate" href="https://aakash.is-a.dev/blog/2022/unix-domain-socket-ipc-in-rust./"/><id>https://aakash.is-a.dev/blog/2022/unix-domain-socket-ipc-in-rust./</id><published>2022-02-08T00:00:00Z</published><updated>2022-02-08T00:00:00Z</updated><summary>&lt;p&gt;The &lt;a href="https://github.com/waycrate/swhkd/pull/10"&gt;IPC patch&lt;/a&gt; is complete and has been merged into the main branch.&lt;/p&gt;
+&lt;p&gt;The patch was made possible with the &lt;a href="https://crates.io/crates/interprocess"&gt;interprocess crate&lt;/a&gt; and was later rewritten to raw stdlib implementation
+in &lt;a href="https://github.com/waycrate/swhkd/commit/35d4960d87b8e2ac6e8a32fd642b1f7555f3ec2a"&gt;this commit&lt;/a&gt;. Currently the server binary (&lt;code&gt;swhks&lt;/code&gt;) makes a
+socket at &lt;code&gt;/run/user/(YourUserID)/swhkd.sock&lt;/code&gt; which then the daemon binary (&lt;code&gt;swhkd&lt;/code&gt;) tries to establish a connection with.&lt;/p&gt;
+&lt;p&gt;After merging the initial set of patches &lt;a href="https://github.com/unsignedarduino"&gt;Ckyiu&lt;/a&gt; found 2 issues right away:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Calling the function &lt;code&gt;physical_path()&lt;/code&gt; on any &lt;code&gt;evdev::Device&lt;/code&gt; object returns None on virtual machines and hence the binary panics and crashes while
+attempting to execute &lt;code&gt;.unwrap()&lt;/code&gt; on it. This issue has been taken care of in this &lt;a href="https://github.com/waycrate/swhkd/commit/1e01014a1436a3983f09c57574b0bca4ff5adfcb"&gt;commit.&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;The &lt;a href="https://github.com/waycrate/swhkd/pull/10"&gt;IPC patch&lt;/a&gt; is complete and has been merged into the main branch.&lt;/p&gt;
+&lt;p&gt;The patch was made possible with the &lt;a href="https://crates.io/crates/interprocess"&gt;interprocess crate&lt;/a&gt; and was later rewritten to raw stdlib implementation
+in &lt;a href="https://github.com/waycrate/swhkd/commit/35d4960d87b8e2ac6e8a32fd642b1f7555f3ec2a"&gt;this commit&lt;/a&gt;. Currently the server binary (&lt;code&gt;swhks&lt;/code&gt;) makes a
+socket at &lt;code&gt;/run/user/(YourUserID)/swhkd.sock&lt;/code&gt; which then the daemon binary (&lt;code&gt;swhkd&lt;/code&gt;) tries to establish a connection with.&lt;/p&gt;
+&lt;p&gt;After merging the initial set of patches &lt;a href="https://github.com/unsignedarduino"&gt;Ckyiu&lt;/a&gt; found 2 issues right away:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Calling the function &lt;code&gt;physical_path()&lt;/code&gt; on any &lt;code&gt;evdev::Device&lt;/code&gt; object returns None on virtual machines and hence the binary panics and crashes while
+attempting to execute &lt;code&gt;.unwrap()&lt;/code&gt; on it. This issue has been taken care of in this &lt;a href="https://github.com/waycrate/swhkd/commit/1e01014a1436a3983f09c57574b0bca4ff5adfcb"&gt;commit.&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The old error message &amp;ldquo;Invoking user is NOT in input group.&amp;rdquo; would lead users to add themselves to the input group, and we definitely don&amp;rsquo;t want that
+as stated in the &lt;a href="https://shinyzenith.xyz/blogs/swhkd_rust_rewrite/"&gt;previous blog&lt;/a&gt;. To counter this issue, &lt;a href="https://github.com/waycrate/swhkd/commit/faecfcf61784a1dfe3c43fa8b4ca303c5b3137b5"&gt;swhkd now warns the user&lt;/a&gt; if they have input group access and gracefully exits.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All that remains now is config file handling which has been assigned to &lt;a href="https://angelo.is-a.dev/"&gt;Angelo Fallaria&lt;/a&gt;, and key event handling which I will
+be implementing.&lt;/p&gt;
+&lt;p&gt;That is all for now 😀.&lt;/p&gt;</content><category term="Rust"/><category term="Waycrate"/></entry><entry><title>Rewriting swhkd in rust!</title><link rel="alternate" href="https://aakash.is-a.dev/blog/2022/rewriting-swhkd-in-rust/"/><id>https://aakash.is-a.dev/blog/2022/rewriting-swhkd-in-rust/</id><published>2022-02-07T00:00:00Z</published><updated>2022-02-07T00:00:00Z</updated><summary>&lt;p&gt;Hi all! It&amp;rsquo;s high time I put this domain purchase to use and uploaded my first blog.&lt;/p&gt;
+&lt;p&gt;I started a project called swhkd a few weeks back which stands for the &lt;strong&gt;S&lt;/strong&gt;imple &lt;strong&gt;W&lt;/strong&gt;ayland &lt;strong&gt;H&lt;/strong&gt;ot&lt;strong&gt;K&lt;/strong&gt;ey &lt;strong&gt;D&lt;/strong&gt;aemon.&lt;/p&gt;
+&lt;p&gt;Swhkd is a drop in replacement for the popular X11 utility &lt;a href="https://github.com/baskerville/sxhkd"&gt;sxhkd&lt;/a&gt;, which is a hotkey daemon.
+Don&amp;rsquo;t let the name fool you, swhkd is compatible with X11, WayLand, and TTY.&lt;/p&gt;
+&lt;p&gt;Initially I wrote a python prototype which worked well for a concept but was a memory hog, consuming upto 19Mb for just printing the device key events.
+I was initially considering zig or go for the rewrite but then I decided to give the RIIR ( rewrite it in rust ) meme a try.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hi all! It&amp;rsquo;s high time I put this domain purchase to use and uploaded my first blog.&lt;/p&gt;
+&lt;p&gt;I started a project called swhkd a few weeks back which stands for the &lt;strong&gt;S&lt;/strong&gt;imple &lt;strong&gt;W&lt;/strong&gt;ayland &lt;strong&gt;H&lt;/strong&gt;ot&lt;strong&gt;K&lt;/strong&gt;ey &lt;strong&gt;D&lt;/strong&gt;aemon.&lt;/p&gt;
+&lt;p&gt;Swhkd is a drop in replacement for the popular X11 utility &lt;a href="https://github.com/baskerville/sxhkd"&gt;sxhkd&lt;/a&gt;, which is a hotkey daemon.
+Don&amp;rsquo;t let the name fool you, swhkd is compatible with X11, WayLand, and TTY.&lt;/p&gt;
+&lt;p&gt;Initially I wrote a python prototype which worked well for a concept but was a memory hog, consuming upto 19Mb for just printing the device key events.
+I was initially considering zig or go for the rewrite but then I decided to give the RIIR ( rewrite it in rust ) meme a try.&lt;/p&gt;
+&lt;p&gt;Rust definitely lived up to it&amp;rsquo;s name. &lt;a href="https://github.com/waycrate/swhkd/pull/7"&gt;After the rewrite&lt;/a&gt; the code isn&amp;rsquo;t too hard to read and it&amp;rsquo;s really
 performant ( 4kb memory consumption for the entire execution ). However rust&amp;rsquo;s memory management model of ownership and borrowing did take me quite a while to
-get comfortable with.&lt;/p>
-&lt;p>Swhkd uses the &lt;a href="https://crates.io/crates/evdev">evdev&lt;/a> crate for getting all keyboard events from the kernel directly. This gives us a uniform protocol to acccess
-keyevents irrelavant of the display server, unlike sxhkd&amp;rsquo;s X11 direct key event grab ( one of the security risks of using X11 ).&lt;/p>
-&lt;p>For swhkd to read the key events the user invoking must be in the input group, which is inherently insecure as all programs running as said user can directly read the
+get comfortable with.&lt;/p&gt;
+&lt;p&gt;Swhkd uses the &lt;a href="https://crates.io/crates/evdev"&gt;evdev&lt;/a&gt; crate for getting all keyboard events from the kernel directly. This gives us a uniform protocol to acccess
+keyevents irrelavant of the display server, unlike sxhkd&amp;rsquo;s X11 direct key event grab ( one of the security risks of using X11 ).&lt;/p&gt;
+&lt;p&gt;For swhkd to read the key events the user invoking must be in the input group, which is inherently insecure as all programs running as said user can directly read the
 entire key event stream from the kernel ( making wayland the same as X11&amp;hellip; ).
-This problem is solved by making a polkit policy file for swhkd which allows users to run swhkd as root without a password.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!DOCTYPE policyconfig PUBLIC &amp;#34;-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN&amp;#34; &amp;#34;http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd&amp;#34;&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;policyconfig&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;action&lt;/span> &lt;span style="color:#a6e22e">id=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;com.github.swhkd.pkexec&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;message&amp;gt;&lt;/span>Authentication is required to run Simple Wayland Hotkey Daemon&lt;span style="color:#f92672">&amp;lt;/message&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;defaults&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;allow_any&amp;gt;&lt;/span>no&lt;span style="color:#f92672">&amp;lt;/allow_any&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;allow_inactive&amp;gt;&lt;/span>no&lt;span style="color:#f92672">&amp;lt;/allow_inactive&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;allow_active&amp;gt;&lt;/span>yes&lt;span style="color:#f92672">&amp;lt;/allow_active&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/defaults&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;annotate&lt;/span> &lt;span style="color:#a6e22e">key=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;org.freedesktop.policykit.exec.path&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>/usr/bin/swhkd&lt;span style="color:#f92672">&amp;lt;/annotate&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/action&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/policyconfig&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Currently I&amp;rsquo;m &lt;a href="https://github.com/waycrate/swhkd/pull/10">writing&lt;/a> the client to receive the shell commands. On every key trigger the daemon should
-send a shell command back to the client using UNIX socket IPC according to the keybind callback function.&lt;/p>
-&lt;p>More updates will be available soon™.&lt;/p></content><category term="Rust"/><category term="Waycrate"/><category term="Wayland"/></entry></feed>
+This problem is solved by making a polkit policy file for swhkd which allows users to run swhkd as root without a password.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-xml" data-lang="xml"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&amp;lt;!DOCTYPE policyconfig PUBLIC &amp;#34;-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN&amp;#34; &amp;#34;http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd&amp;#34;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;policyconfig&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;action&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;com.github.swhkd.pkexec&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;message&amp;gt;&lt;/span&gt;Authentication is required to run Simple Wayland Hotkey Daemon&lt;span style="color:#f92672"&gt;&amp;lt;/message&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;defaults&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;allow_any&amp;gt;&lt;/span&gt;no&lt;span style="color:#f92672"&gt;&amp;lt;/allow_any&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;allow_inactive&amp;gt;&lt;/span&gt;no&lt;span style="color:#f92672"&gt;&amp;lt;/allow_inactive&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;allow_active&amp;gt;&lt;/span&gt;yes&lt;span style="color:#f92672"&gt;&amp;lt;/allow_active&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;/defaults&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;annotate&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;key=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;org.freedesktop.policykit.exec.path&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;/usr/bin/swhkd&lt;span style="color:#f92672"&gt;&amp;lt;/annotate&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;lt;/action&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f92672"&gt;&amp;lt;/policyconfig&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Currently I&amp;rsquo;m &lt;a href="https://github.com/waycrate/swhkd/pull/10"&gt;writing&lt;/a&gt; the client to receive the shell commands. On every key trigger the daemon should
+send a shell command back to the client using UNIX socket IPC according to the keybind callback function.&lt;/p&gt;
+&lt;p&gt;More updates will be available soon™.&lt;/p&gt;</content><category term="Rust"/><category term="Waycrate"/><category term="Wayland"/></entry></feed>
